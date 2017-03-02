@@ -1,0 +1,25 @@
+
+<div class="wrapper" data-ng-init="initAppts()">
+	<h1>Doctor's Appointments</h1>
+	<a ng-click="logout()">Logout {{user}}</a>
+
+	<h3>Search</h3><input type="text" ng-model="search.$">
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Patient Name</th>
+			<th>Complain</th>
+		</tr>
+		<tr ng-repeat="appointment in appointments | orderBy:'-date':true | filter:search.$:strict">
+			<td>{{appointment.date | date:'MMMM dd, yyyy'}}</td>
+			<td>{{appointment.time}}</td>
+			<td>{{appointment.name}}</td>
+			<td>{{appointment.complain}}<button ng-click="deleteAppt(appointment._id)" data-ng-if="id === appointment.userid">Delete</button></td>
+		</tr>
+		
+
+		
+	</table>
+	<button ng-click="addAppt()">Add a new Appointment</button>
+</div>

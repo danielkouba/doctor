@@ -1,0 +1,19 @@
+<fieldset>
+  
+  <legend><h4>Register:</h4></legend>
+  <p ng-repeat='error in regErrors'>{{error.message}}</p>
+
+  <form>
+    Username: <input type="text" ng-model="newUser.name"> <br>
+    <input type="submit" value="Create an Account" ng-click="adduser()">
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend><h4>Login:</h4></legend>
+  <p ng-repeat='error in loginErrors'>{{error}}</p>
+  <form>
+    Username: <input type="text" ng-model="user.name"> <br>
+    <input type="submit" value="Login" ng-click="loginuser()"> <br>
+  </form>
+</fieldset>

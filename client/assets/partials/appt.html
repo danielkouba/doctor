@@ -1,0 +1,37 @@
+<div class="wrapper" data-ng-init="initAppts()">
+<h1>New Appointment for {{user}}</h1>
+
+
+
+<div class="formwrapper">
+	<form name="userForm" ng-submit="submitForm()">
+		
+
+		<h3>Date:</h3>
+		<input type="date" ui-date-format="mm/dd/yyyy" min="{{datenow}}" ng-model="appointment.date">
+		<h3>Time:</h3>
+		<!-- <input type="select" ng-model="appointment.time"> -->
+		<select ng-model="appointment.time">
+			<option value="8:00 AM">8:00 AM</option>
+			<option value="9:00 AM">9:00 AM</option>
+			<option value="9:00 AM">10:00 AM</option>
+			<option value="9:00 AM">11:00 AM</option>
+			<option value="9:00 AM">12:00 PM</option>
+			<option value="9:00 AM">1:00 PM</option>
+			<option value="9:00 AM">2:00 PM</option>
+			<option value="9:00 AM">3:00 PM</option>
+			<option value="9:00 AM">4:00 PM</option>
+			<option value="9:00 AM">5:00 PM</option>
+
+		</select>
+		<h3>Complain:</h3>
+		<textarea name="" id="" cols="30" rows="10" ng-model="appointment.complain"></textarea>
+		<input type="submit"></input>
+
+
+	</form>
+</div>
+<div class="errorwrapper">
+	<p ng-repeat="error in errors">{{error}}</p>
+</div>
+</div>
